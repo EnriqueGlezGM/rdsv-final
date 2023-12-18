@@ -5,14 +5,14 @@ En esta práctica, se va a profundizar en las funciones de red virtualizadas (VN
 Un caso de virtualización de servicio de red para el que ya existen numerosas propuestas y soluciones es el del servicio vCPE (Virtual Customer Premises Equipment). En nuestro caso, veremos ese servicio vCPE en el contexto del acceso a Internet desde una red corporativa, y lo extenderemos para llevar las funciones de un equipo SD-WAN Edge a la central de proximidad.
 Más informacion en [Práctica 4](https://github.com/educaredes/sdedge-ns/blob/main/doc/rdsv-p4.md).
 
-En el caso que se trata, se trata de un ampiación de esta práctica con el objetivo de:
+En el caso que se trata, se trata de un ampliación de esta práctica con el objetivo de:
 - añadirle soporte de QoS implementado mediante SDN con Ryu
 - añadir servicios adicionales
 
 Más información en [recomendaciones](https://github.com/educaredes/sdedge-ns/blob/main/doc/rdsv-final.md).
 
 
-## Instalación
+## Instalación (SOLO SI ES UN REPOSITORIO PRIVADO)
 
 Al tratarse de un repositorio privado es necesario verificar la identidad antes de clonarlo.
 La guia oficial para [generar una nueva clave SSH](https://docs.github.com/es/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) y [agregar una clave SSH y usarla para la autenticación](https://docs.github.com/es/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account).
