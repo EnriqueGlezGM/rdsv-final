@@ -63,13 +63,13 @@ $HOME/shared/GitHub/rdsv-final/start.sh
 ## Posibles problemas de ejecución
 Que los enlaces ya estan creados, para ello es necesario elimiarlos mediante:
 ```bash
-ovs-vsctl list-br
-ovs-vsctl del-br MplsWan
-ovs-vsctl del-br AccessNet1
-ovs-vsctl del-br AccessNet2
-ovs-vsctl del-br ExtNet1
-ovs-vsctl del-br ExtNet2
-ovs-vsctl list-br
+sudo ovs-vsctl list-br
+sudo ovs-vsctl del-br MplsWan
+sudo ovs-vsctl del-br AccessNet1
+sudo ovs-vsctl del-br AccessNet2
+sudo ovs-vsctl del-br ExtNet1
+sudo ovs-vsctl del-br ExtNet2
+sudo ovs-vsctl list-br
 
 ```
 
