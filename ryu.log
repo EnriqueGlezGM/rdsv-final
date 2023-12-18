@@ -1,0 +1,25 @@
+loading app flowmanager/flowmanager.py
+loading app ryu.app.ofctl_rest
+loading app ryu.topology.switches
+loading app ryu.controller.ofp_handler
+instantiating app None of DPSet
+creating context dpset
+creating context wsgi
+instantiating app flowmanager/flowmanager.py of FlowManager
+Created flowmanager
+instantiating app ryu.topology.switches of Switches
+instantiating app ryu.app.ofctl_rest of RestStatsApi
+instantiating app ryu.controller.ofp_handler of OFPHandler
+(156) wsgi starting up on http://0.0.0.0:8080
+(156) accepted ('10.0.1.1', 3576)
+10.0.1.1 - - [16/Dec/2023 20:16:03] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.005468
+(156) accepted ('10.0.1.1', 1336)
+10.0.1.1 - - [16/Dec/2023 20:16:03] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.000585
+(156) accepted ('10.0.1.1', 8073)
+10.0.1.1 - - [16/Dec/2023 20:16:03] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.000686
+(156) accepted ('10.0.1.1', 47436)
+10.0.1.1 - - [16/Dec/2023 20:16:03] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.000565
+(156) accepted ('10.0.1.1', 8350)
+10.0.1.1 - - [16/Dec/2023 20:16:03] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.000610
+(156) accepted ('10.0.1.1', 25449)
+10.0.1.1 - - [16/Dec/2023 20:16:03] "POST /stats/flowentry/add HTTP/1.1" 200 115 0.000636

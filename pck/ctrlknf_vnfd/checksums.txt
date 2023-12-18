@@ -1,0 +1,1 @@
+efec2be52cc267135450538249702300	ctrlknf_vnfd/ctrlknf_vnfd.yaml
