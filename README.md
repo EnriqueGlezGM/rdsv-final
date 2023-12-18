@@ -24,6 +24,7 @@ Con las credenciales correctamente configuradas, clonar repositorio y arrancar l
 cd $HOME/shared
 git clone git@github.com:EnriqueGlezGM/rdsv-final.git
 rdsv-final/bin/get-osmlab-k8s
+echo 'Los siguientes comandos en la MV'
 
 ```
 **¡ATENCION! El resto de la práctica se realiza sobre la máquina virtual.**
@@ -35,12 +36,14 @@ cd $HOME/shared/rdsv-final/bin
 ./rdsv-start-tun U
 ./rdsv-clean-all
 ./rdsv-config-osmlab U
+echo 'Cierre el terminal actual'
 ```
 ```bash
 # Si realiza la práctica desde el laboratorio y usas la letra O
 cd $HOME/shared/rdsv-final/bin
 ./rdsv-start-tun labtun5.dit.upm.es O
 ./rdsv-config-osmlab O
+echo 'Cierre el terminal actual'
 ```
 A continuación, cierre el terminal y abra uno nuevo.
 
