@@ -21,8 +21,7 @@ La guia oficial para [generar una nueva clave SSH](https://docs.github.com/es/au
 ## Preparación del entorno
 Con las credenciales correctamente configuradas, clonar repositorio y arrancar la MV:
 ```bash
-mkdir $HOME/shared/GitHub
-cd $HOME/shared/GitHub
+cd $HOME/shared
 git clone git@github.com:EnriqueGlezGM/rdsv-final.git
 rdsv-final/bin/get-osmlab-k8s
 
@@ -32,13 +31,14 @@ rdsv-final/bin/get-osmlab-k8s
 Primero se inicializa el tunel, y luego se configura el entorno para acceder a OSM:
 ```bash
 # Si realiza la práctica desde el laboratorio y usas la letra U
-cd $HOME/shared/GitHub/rdsv-final/bin
+cd $HOME/shared/rdsv-final/bin
 ./rdsv-start-tun U
+./rdsv-clean-all
 ./rdsv-config-osmlab U
 ```
 ```bash
 # Si realiza la práctica desde el laboratorio y usas la letra O
-cd $HOME/shared/GitHub/rdsv-final/bin
+cd $HOME/shared/rdsv-final/bin
 ./rdsv-start-tun labtun5.dit.upm.es O
 ./rdsv-config-osmlab O
 ```
@@ -57,7 +57,7 @@ echo "-- OSMNS=$OSMNS"
 ## Arranque
 En la terminal que se acaba de abrir con als variables globales accesibles, se ejecuta el script de inicialización:
 ```bash
-$HOME/shared/GitHub/rdsv-final/start.sh
+$HOME/shared/rdsv-final/start.sh
 
 ```
 
