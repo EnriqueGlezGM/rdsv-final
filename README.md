@@ -41,7 +41,7 @@ echo 'Cierre el terminal actual'
 ```bash
 # Si realiza la práctica desde el laboratorio y usas la letra O
 cd $HOME/shared/rdsv-final/bin
-./rdsv-start-tun labtun5.dit.upm.es O
+./rdsv-start-tun O labtun5.dit.upm.es
 ./rdsv-config-osmlab O
 echo 'Cierre el terminal actual'
 ```
