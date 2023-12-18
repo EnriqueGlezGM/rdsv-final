@@ -21,6 +21,7 @@ La guia oficial para [generar una nueva clave SSH](https://docs.github.com/es/au
 ## Preparación del entorno
 Con las credenciales correctamente configuradas, clonar repositorio y arrancar la MV:
 ```bash
+mkdir $HOME/shared/GitHub
 cd $HOME/shared/GitHub
 git clone git@github.com:EnriqueGlezGM/rdsv-final.git
 rdsv-final/bin/get-osmlab-k8s
