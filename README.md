@@ -14,7 +14,7 @@ Más información en [recomendaciones](https://github.com/educaredes/sdedge-ns/b
 
 ## Instalación (SOLO SI ES UN REPOSITORIO PRIVADO)
 
-Al tratarse de un repositorio privado es necesario verificar la identidad antes de clonarlo.
+Al tratarse de un repositorio privado es necesario verificar la identidad. Solo es necesario hacerlo una unica vez.
 La guia oficial para [generar una nueva clave SSH](https://docs.github.com/es/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) y [agregar una clave SSH y usarla para la autenticación](https://docs.github.com/es/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account).
 
 
