@@ -31,7 +31,7 @@ rdsv-final/bin/get-osmlab-k8s
 Primero se inicializa el tunel, y luego se configura el entorno para acceder a OSM:
 ```bash
 # Si realiza la práctica desde el laboratorio
-cd $HOME/shared/GitHub/rdsv-final
+cd $HOME/shared/GitHub/rdsv-final/bin
 ```
 ```bash
 ./rdsv-start-tun <letra>
@@ -41,7 +41,7 @@ cd $HOME/shared/GitHub/rdsv-final
 ```
 ```bash
 # Si realiza la práctica desde el laboratorio
-cd $HOME/shared/GitHub/rdsv-final
+cd $HOME/shared/GitHub/rdsv-final/bin
 ```
 ```bash
 ./rdsv-start-tun labtun5.dit.upm.es <letra>
