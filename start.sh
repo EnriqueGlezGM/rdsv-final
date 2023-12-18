@@ -15,9 +15,6 @@ if [ -z "$OSMNS" ]; then
     exit 1
 fi
 
-# Abrimos el navegador
-firefox 10.11.13.1 &
-
 # Se instala el nuevo repositorio
 cd /tmp
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
@@ -50,10 +47,8 @@ sudo vnx -f sdedge_nfv.xml -t
 #Se abren todas las consolas del escenario
 export NSID1=$(osm ns-create --ns_name sdedge1 --nsd_name sdedge --vim_account dummy_vim)
 export NSID2=$(osm ns-create --ns_name sdedge2 --nsd_name sdedge --vim_account dummy_vim)
-bin/sdw-knf-consoles open $NSID1
-bin/sdw-knf-consoles open $NSID2
 
-#Configuracion de servicios
-cd $HOME/shared/rdsv-final
-./sdedge1.sh 
-./sdedge2.sh 
+#Observaciones de ejecucion
+echo 'Para abrir las consulas de la sede uno, esperar a que se inicialice, y luego ejecutar: bin/sdw-knf-consoles open $NSID1'
+echo 'Para abrir las consulas de la sede dos, esperar a que se inicialice, y luego ejecutar: bin/sdw-knf-consoles open $NSID2'
+firefox http://10.11.13.1/instances/ns &
