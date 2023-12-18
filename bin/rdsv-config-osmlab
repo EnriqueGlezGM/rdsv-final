@@ -182,3 +182,4 @@ EOF
 
 echo "-- kubectl get -n $OSMNS network-attachment-definitions"
 microk8s kubectl get -n $OSMNS network-attachment-definitions
+gnome-terminal
