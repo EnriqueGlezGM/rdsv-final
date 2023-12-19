@@ -28,6 +28,8 @@ echo 'Los siguientes comandos en la MV'
 
 ```
 **¡ATENCION! El resto de la práctica se realiza sobre la máquina virtual.**
+
+
 Limpiamos el entorno
 ```bash
 sudo ovs-vsctl list-br
