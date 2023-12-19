@@ -34,7 +34,6 @@ Primero se inicializa el tunel, y luego se configura el entorno para acceder a O
 # Si realiza la práctica desde el laboratorio y usas la letra U
 cd $HOME/shared/rdsv-final/bin
 ./rdsv-start-tun U
-./rdsv-clean-all
 ./rdsv-config-osmlab U
 echo 'Cierre el terminal actual'
 ```
