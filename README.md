@@ -28,13 +28,22 @@ echo 'Los siguientes comandos en la MV'
 
 ```
 **¡ATENCION! El resto de la práctica se realiza sobre la máquina virtual.**
+Limpiamos el entorno
+```bash
+sudo ovs-vsctl list-br
+sudo ovs-vsctl del-br MplsWan
+sudo ovs-vsctl del-br AccessNet1
+sudo ovs-vsctl del-br AccessNet2
+sudo ovs-vsctl del-br ExtNet1
+sudo ovs-vsctl del-br ExtNet2
+sudo ovs-vsctl list-br
 
+```
 Primero se inicializa el tunel, y luego se configura el entorno para acceder a OSM:
 ```bash
 # Si realiza la práctica desde el laboratorio y usas la letra U
 cd $HOME/shared/rdsv-final/bin
 ./rdsv-start-tun U
-./rdsv-clean-all
 ./rdsv-config-osmlab U
 echo 'Cierre el terminal actual'
 ```
