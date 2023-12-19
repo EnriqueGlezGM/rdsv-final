@@ -19,6 +19,7 @@ set -u # to verify variables are defined
 : $VACC
 : $VCPE
 : $VWAN
+: $VCTR
 : $CUSTUNIP
 : $CUSTPREFIX
 : $VNFTUNIP
@@ -43,11 +44,18 @@ if [[ ! $VWAN =~ "sdedge-ns-repo-wanchart"  ]]; then
     exit 1
 fi
 
+if [[ ! $VCTR =~ "sdedge-ns-repo-ctrlchart"  ]]; then
+    echo ""       
+    echo "ERROR: incorrect <ctrl_deployment_id>: $VCTR"
+    exit 1
+fi
+
 
 
 ACC_EXEC="$KUBECTL exec -n $OSMNS $VACC --"
 CPE_EXEC="$KUBECTL exec -n $OSMNS $VCPE --"
 WAN_EXEC="$KUBECTL exec -n $OSMNS $VWAN --"
+CTR_EXEC="$KUBECTL exec -n $OSMNS $VCTR --"
 
 # IP privada por defecto para el vCPE
 VCPEPRIVIP="192.168.255.254"
@@ -67,6 +75,9 @@ echo "IPCPE = $IPCPE"
 
 IPWAN=`$WAN_EXEC hostname -I | awk '{print $1}'`
 echo "IPWAN = $IPWAN"
+
+IPCTR=`$CTR_EXEC hostname -I | awk '{print $1}'`
+echo "IPCTR = $IPCTR"
 
 ## 2. Iniciar el Servicio OpenVirtualSwitch en wan VNF:
 echo "## 2. Iniciar el Servicio OpenVirtualSwitch en wan VNF"

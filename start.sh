@@ -48,6 +48,9 @@ sudo vnx -f sdedge_nfv.xml -t
 export NSID1=$(osm ns-create --ns_name sdedge1 --nsd_name sdedge --vim_account dummy_vim)
 export NSID2=$(osm ns-create --ns_name sdedge2 --nsd_name sdedge --vim_account dummy_vim)
 
+echo "export NSID1=$NSID1" >> ~/.bashrc
+echo "export NSID2=$NSID2" >> ~/.bashrc
+
 #Observaciones de ejecucion
 echo 'Para abrir las consulas de la sede uno, esperar a que se inicialice, y luego ejecutar: bin/sdw-knf-consoles open $NSID1'
 echo 'Para abrir las consulas de la sede dos, esperar a que se inicialice, y luego ejecutar: bin/sdw-knf-consoles open $NSID2'

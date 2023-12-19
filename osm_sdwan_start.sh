@@ -23,10 +23,12 @@ echo "## 0. Obtener deployment ids de las vnfs"
 OSMACC=$(deployment_id $SIID "access")
 OSMCPE=$(deployment_id $SIID "cpe")
 OSMWAN=$(deployment_id $SIID "wan")
+OSMCTR=$(deployment_id $SIID "ctrl")
 
 export VACC="deploy/$OSMACC"
 export VCPE="deploy/$OSMCPE"
 export VWAN="deploy/$OSMWAN"
+export VCTR="deploy/$OSMCTR"
 
-./start_sdwan.sh
+./start_sdwan_qos.sh
 

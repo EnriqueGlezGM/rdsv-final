@@ -23,7 +23,6 @@ sleep 1
 echo "CTRL chart: $ctrlsdedge2"
 sleep 1
 
-
 echo "** Obteniendo IP CTRL **"
 sleep 2
 deployment_id() {
@@ -65,15 +64,6 @@ $KUBECTL -n $OSMNS exec -i $cpesdedge2 -- ovs-vsctl set bridge brwan other-confi
 $KUBECTL -n $OSMNS exec -i $cpesdedge2 -- ovs-vsctl set-controller brwan tcp:$IPCTR:6633
 $KUBECTL -n $OSMNS exec -i $cpesdedge2 -- ovs-vsctl set-manager ptcp:6632
 
-echo "OpenflowVS configurado"
-sleep 1
-echo "Aplicando las reglas de la sdwan con ryu"
-sleep 2
-RYU_ADD_URL="http://localhost:$PORTCTR/stats/flowentry/add"
-echo "URL: $RYU_ADD_URL"
-curl -X POST -d @json/from-wan-to-access.json $RYU_ADD_URL
-curl -X POST -d @json/to-wan-from-access.json $RYU_ADD_URL
-curl -X POST -d @json/from-wan-to-cpe.json $RYU_ADD_URL
-curl -X POST -d @json/to-wan-from-cpe.json $RYU_ADD_URL
-curl -X POST -d @json/broadcast-from-cpe.json $RYU_ADD_URL
+echo "OpenflowVS QoS configurado"
+
 

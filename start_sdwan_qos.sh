@@ -77,10 +77,10 @@ $CPE_EXEC ifconfig sr1sr2 up
 echo "## 3. En VNF:ctrl arrancar controlador SDN"
 #$WAN_EXEC /usr/local/bin/ryu-manager --verbose flowmanager/flowmanager.py ryu.app.ofctl_rest 2>&1 | tee ryu.log &
 #$WAN_EXEC /usr/local/bin/ryu-manager ryu.app.simple_switch_13 ryu.app.ofctl_rest 2>&1 | tee ryu.log &
-$CTR_EXEC /usr/local/bin/ryu-manager flowmanager/flowmanager.py ryu.app.ofctl_rest 2>&1 | tee ryu.log &
-#$WAN_EXEC ryu-manager ryu.app.rest_qos ryu.app.rest_conf_switch ./qos_simple_switch_13.py &
+#$WAN_EXEC /usr/local/bin/ryu-manager flowmanager/flowmanager.py ryu.app.ofctl_rest 2>&1 | tee ryu.log &
+$CTR_EXEC ryu-manager ryu.app.rest_qos ryu.app.rest_conf_switch ./qos_simple_switch_13.py &
 
-## 4. En VNF:ctrl wan el modo SDN del conmutador y crear vxlan
+## 4. En VNF:wan activar el modo SDN del conmutador y crear vxlan
 echo "## 4. En VNF:wan activar el modo SDN del conmutador y crear vxlan"
 
 $WAN_EXEC ovs-vsctl set bridge brwan protocols=OpenFlow10,OpenFlow12,OpenFlow13
@@ -94,16 +94,6 @@ $WAN_EXEC ip link add cpewan type vxlan id 5 remote $IPCPE dstport 8741 dev eth0
 $WAN_EXEC ovs-vsctl add-port brwan cpewan
 $WAN_EXEC ifconfig cpewan up
 
-## 5. Aplica las reglas de la sdwan con ryu
-echo "## 5. Aplica las reglas de la sdwan con ryu"
-RYU_ADD_URL="http://localhost:$PORTCTR/stats/flowentry/add"
-curl -X POST -d @json/from-cpe.json $RYU_ADD_URL
-curl -X POST -d @json/to-cpe.json $RYU_ADD_URL
-curl -X POST -d @json/broadcast-from-axs.json $RYU_ADD_URL
-curl -X POST -d @json/from-mpls.json $RYU_ADD_URL
-curl -X POST -d @json/to-voip-gw.json $RYU_ADD_URL
-curl -X POST -d @json/sdedge$NETNUM/to-voip.json $RYU_ADD_URL
 
-echo "--"
-echo "sdedge$NETNUM: abrir navegador para ver sus flujos Openflow:"
-echo "firefox http://localhost:$PORTWAN/home/ &"
+echo "Configuración finalizada"
+

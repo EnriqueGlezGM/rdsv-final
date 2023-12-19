@@ -25,20 +25,14 @@ $KUBECTL -n $OSMNS exec -it $wansdedge1 -- pkill arpwatch
 sleep 4
 echo "** Servicio arpwatch finalizado correctamente **"
 sleep 1
-echo -e "\nCargando contenido de net1.dat..."
-sleep 2
+#echo -e "\nCargando contenido de net1.dat..."
+#sleep 2
 echo -e "\n ## Captura de trafico KNF Access: ##"
 $KUBECTL -n $OSMNS exec -it $accsdedge1 -- cat /var/lib/arpwatch/net1.dat
-echo -e "\n ## Captura de trafico KNF CPE: ##"
-$KUBECTL -n $OSMNS exec -it $cpesdedge1 -- cat /var/lib/arpwatch/net1.dat
 
 echo -e "\nCargando contenido de brint.dat..."
 sleep 2
 echo -e "\n ## Captura de trafico KNF CPE: ##"
 $KUBECTL -n $OSMNS exec -it $cpesdedge1 -- cat /var/lib/arpwatch/brint.dat
 
-echo -e "\nCargando contenido de arp.dat..."
-sleep 2
-echo -e "\n ## Captura de trafico KNF WAN: ##"
-$KUBECTL -n $OSMNS exec -it $wansdedge1 -- cat /var/lib/arpwatch/arp.dat
 

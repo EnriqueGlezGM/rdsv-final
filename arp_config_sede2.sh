@@ -27,17 +27,12 @@ $KUBECTL -n $OSMNS exec $accsdedge2 -- sh -c 'echo "INTERFACES=\"net2\"" >> /etc
 
 $KUBECTL -n $OSMNS exec $cpesdedge2 -- sed -i '/^INTERFACES=/d' /etc/default/arpwatch
 sleep 1
-$KUBECTL -n $OSMNS exec $cpesdedge2 -- sh -c 'echo "INTERFACES=\"net2 brint\"" >> /etc/default/arpwatch'
+$KUBECTL -n $OSMNS exec $cpesdedge2 -- sh -c 'echo "INTERFACES=\"brint\"" >> /etc/default/arpwatch'
 
 echo "** Borrando cache **"
 if $KUBECTL -n $OSMNS exec $accsdedge2 -- test -f /var/lib/arpwatch/net2.dat 2>/dev/null; then
     $KUBECTL -n $OSMNS exec $accsdedge2 -- rm -f /var/lib/arpwatch/net2.dat
     echo "Eliminando net2.dat en KNF Access"
-fi
-
-if $KUBECTL -n $OSMNS exec $cpesdedge2 -- test -f /var/lib/arpwatch/net2.dat 2>/dev/null; then
-    $KUBECTL -n $OSMNS exec $cpesdedge2 -- rm -f /var/lib/arpwatch/net2.dat
-    echo "Eliminando net2.dat en KNF CPE"
 fi
 
 if $KUBECTL -n $OSMNS exec $cpesdedge2 -- test -f /var/lib/arpwatch/brint.dat 2>/dev/null; then

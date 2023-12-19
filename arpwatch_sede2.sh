@@ -29,16 +29,9 @@ echo -e "\nCargando contenido de net2.dat..."
 sleep 2
 echo -e "\n ## Captura de trafico KNF Access: ##"
 $KUBECTL -n $OSMNS exec -it $accsdedge2 -- cat /var/lib/arpwatch/net2.dat
-echo -e "\n ## Captura de trafico KNF CPE: ##"
-$KUBECTL -n $OSMNS exec -it $cpesdedge2 -- cat /var/lib/arpwatch/net2.dat
 
 echo -e "\nCargando contenido de brint.dat..."
 sleep 2
 echo -e "\n ## Captura de trafico KNF CPE: ##"
 $KUBECTL -n $OSMNS exec -it $cpesdedge2 -- cat /var/lib/arpwatch/brint.dat
-
-echo -e "\nCargando contenido de arp.dat..."
-sleep 2
-echo -e "\n ## Captura de trafico KNF WAN: ##"
-$KUBECTL -n $OSMNS exec -it $wansdedge2 -- cat /var/lib/arpwatch/arp.dat
 
