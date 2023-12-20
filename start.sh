@@ -60,6 +60,6 @@ docker tag $IMAGE_ID $SERVER_MICROK8S/mynginx:registry
 docker push $SERVER_MICROK8S/mynginx:registry
 
 #Observaciones de ejecucion
-echo 'Para abrir las consulas de la sede uno, esperar a que se inicialice,abrir otra terminal, y luego ejecutar: bin/sdw-knf-consoles open $NSID1'
-echo 'Para abrir las consulas de la sede dos, esperar a que se inicialice,abrir otra terminal, y luego ejecutar: bin/sdw-knf-consoles open $NSID2'
+echo 'Por favor,cierre este terminal para tener las variables locales cargadas correctamente'
 firefox http://10.11.13.1/instances/ns &
+gnome-terminal
