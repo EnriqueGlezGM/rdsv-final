@@ -30,5 +30,5 @@ export VCPE="deploy/$OSMCPE"
 export VWAN="deploy/$OSMWAN"
 export VCTR="deploy/$OSMCTR"
 
-./start_sdwan_qos.sh
+./start_sdwan.sh
 
