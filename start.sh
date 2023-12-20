@@ -51,7 +51,15 @@ export NSID2=$(osm ns-create --ns_name sdedge2 --nsd_name sdedge --vim_account d
 echo "export NSID1=$NSID1" >> ~/.bashrc
 echo "export NSID2=$NSID2" >> ~/.bashrc
 
+# Mejora opcional
+echo 'Repositorio privado de imágenes Docker: MicroK8s'
+microk8s enable registry
+SERVER_MICROK8S=$(microk8s config| grep server | grep -o '/.*'|awk -F/ '{print $3}')
+IMAGE_ID=$(docker images --format "{{.ID}}" | head -n 1)
+docker tag $IMAGE_ID $SERVER_MICROK8S/mynginx:registry
+docker push $SERVER_MICROK8S/mynginx:registry
+
 #Observaciones de ejecucion
-echo 'Para abrir las consulas de la sede uno, esperar a que se inicialice, y luego ejecutar: bin/sdw-knf-consoles open $NSID1'
-echo 'Para abrir las consulas de la sede dos, esperar a que se inicialice, y luego ejecutar: bin/sdw-knf-consoles open $NSID2'
+echo 'Para abrir las consulas de la sede uno, esperar a que se inicialice,abrir otra terminal, y luego ejecutar: bin/sdw-knf-consoles open $NSID1'
+echo 'Para abrir las consulas de la sede dos, esperar a que se inicialice,abrir otra terminal, y luego ejecutar: bin/sdw-knf-consoles open $NSID2'
 firefox http://10.11.13.1/instances/ns &
