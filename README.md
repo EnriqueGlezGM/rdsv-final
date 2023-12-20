@@ -37,13 +37,8 @@ cd $HOME/shared/rdsv-final/bin
 ./rdsv-config-osmlab U
 echo 'Cierre el terminal actual'
 ```
-```bash
-# Si realiza la práctica desde el laboratorio y usas la letra O
-cd $HOME/shared/rdsv-final/bin
-./rdsv-start-tun O labtun5.dit.upm.es
-./rdsv-config-osmlab O
-echo 'Cierre el terminal actual'
-```
+
+
 A continuación, cierre el terminal anterior, y ejecuta los comandos ahora en el que se acaba de abrir.
 
 En el nuevo terminal, obtenga los valores asignados a las diferentes variables configuradas para acceder a OSM (OSM_*) y el identificador del namespace de K8S creado para OSM (OSMNS):
