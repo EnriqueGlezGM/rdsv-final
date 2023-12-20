@@ -57,9 +57,19 @@ echo "-- OSMNS=$OSMNS"
 ```
 
 ## Arranque
-En la terminal que se acaba de abrir con als variables globales accesibles, se ejecuta el script de inicialización:
+En la terminal que se acaba de abrir con las variables globales accesibles, se ejecuta el script de inicialización:
 ```bash
 $HOME/shared/rdsv-final/start.sh
+
+```
+
+## Configurar sedes
+Se abrira de nuevo otra terminal donde es necesario ejecutar lo siguiente para configurar las sedes:
+```bash
+$HOME/shared/rdsv-final/sdedge1.sh
+$HOME/shared/rdsv-final/sdedge2.sh
+$HOME/shared/rdsv-finalbin/sdw-knf-consoles open $NSID1
+$HOME/shared/rdsv-finalbin/sdw-knf-consoles open $NSID2
 
 ```
 
