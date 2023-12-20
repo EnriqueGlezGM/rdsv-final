@@ -1,6 +1,0 @@
-sudo ovs-vsctl list-br
-sudo ovs-vsctl del-br MplsWan
-sudo ovs-vsctl del-br AccessNet1
-sudo ovs-vsctl del-br AccessNet2
-sudo ovs-vsctl del-br ExtNet1
-sudo ovs-vsctl del-br ExtNet2
