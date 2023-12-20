@@ -61,6 +61,7 @@ $HOME/shared/rdsv-final/start.sh
 ## Configurar sedes
 Se abrira de nuevo otra terminal donde es necesario ejecutar lo siguiente para configurar las sedes:
 ```bash
+cd $HOME/shared/rdsv-final
 $HOME/shared/rdsv-final/sdedge1.sh
 $HOME/shared/rdsv-final/sdedge2.sh
 $HOME/shared/rdsv-finalbin/sdw-knf-consoles open $NSID1
