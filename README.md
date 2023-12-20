@@ -64,8 +64,8 @@ Se abrira de nuevo otra terminal donde es necesario ejecutar lo siguiente para c
 cd $HOME/shared/rdsv-final
 $HOME/shared/rdsv-final/sdedge1.sh
 $HOME/shared/rdsv-final/sdedge2.sh
-$HOME/shared/rdsv-finalbin/sdw-knf-consoles open $NSID1
-$HOME/shared/rdsv-finalbin/sdw-knf-consoles open $NSID2
+$HOME/shared/rdsv-final/bin/sdw-knf-consoles open $NSID1
+$HOME/shared/rdsv-final/bin/sdw-knf-consoles open $NSID2
 
 ```
 
