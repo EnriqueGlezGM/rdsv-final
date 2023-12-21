@@ -23,9 +23,6 @@ sleep 1
 echo "CTRL chart: $ctrlsdedge2"
 sleep 1
 
-echo "** Ejecutando RYU **"
-$KUBECTL -n $OSMNS exec -i $ctrlsdedge2 -- ryu-manager ryu.app.rest_qos ryu.app.rest_conf_switch ./qos_simple_switch_13.py &
-
 echo "** Obteniendo IP CTRL **"
 sleep 2
 deployment_id() {

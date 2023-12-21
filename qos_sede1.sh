@@ -54,13 +54,19 @@ echo "IPCTR = $IPCTR"
 IPWAN=`$WAN_EXEC hostname -I | awk '{print $1}'`
 echo "IPWAN = $IPWAN"
 
+echo "** Ejecutando QoS simple switch **"
+$KUBECTL -n $OSMNS exec -i $ctrlsdedge1 -- ryu-manager ryu.app.rest_qos ryu.app.rest_conf_switch ./qos_simple_switch_13.py &
+sleep 20
 
 echo "Configurando calidad de servicio..."
 sleep 1
 
 TCP="tcp:$IPWAN:6632"
 
-$KUBECTL -n $OSMNS exec -i $wansdedge1 -- curl -X PUT -d "$TCP" http://$IPCTR:8080/v1.0/conf/switches/0000000000000001/ovsdb_addr
+$KUBECTL -n $OSMNS exec -i $ctrlsdedge1 -- curl -X PUT -d "$TCP" http://localhost:8080/v1.0/conf/switches/0000000000000001/ovsdb_addr
+
+#curl -X PUT -d '"tcp:10.1.77.39:6632"' http://localhost:8080/v1.0/conf/switches/0000000000000001/ovsdb_addr
+
 
 $KUBECTL -n $OSMNS exec -i $ctrlsdedge1 -- curl -X POST -d '{"port_name": "axswan", "type": "linux-htb", "max_rate": "2400000", "queues": [{"min_rate": "800000"}]}' http://127.0.0.1:8080/qos/queue/0000000000000001
 $KUBECTL -n $OSMNS exec -i $ctrlsdedge1 -- curl -X POST -d '{"match": {"nw_dst": "10.20.1.2", "nw_proto": "UDP", "udp_dst": "5005"}, "actions":{"queue": "0"}}' http://127.0.0.1:8080/qos/rules/0000000000000001

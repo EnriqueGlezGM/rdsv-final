@@ -106,4 +106,4 @@ curl -X POST -d @json/sdedge$NETNUM/to-voip.json $RYU_ADD_URL
 
 echo "--"
 echo "sdedge$NETNUM: abrir navegador para ver sus flujos Openflow:"
-echo "firefox http://localhost:$PORTWAN/home/ &"
+echo "firefox http://localhost:$PORTCTR/home/ &"

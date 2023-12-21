@@ -69,6 +69,29 @@ $HOME/shared/rdsv-final/bin/sdw-knf-consoles open $NSID2
 
 ```
 
+## Orden de ejecución - Escenario 1: Switches brwan Flowmanager [sin QoS]
+Se indica el orden de ejecución de los scripts:
+```bash
+cd $HOME/shared/rdsv-final
+$HOME/shared/rdsv-final/sdwan1.sh
+$HOME/shared/rdsv-final/sdwan2.sh
+$HOME/shared/rdsv-final/brwan_config_sede1.sh
+$HOME/shared/rdsv-final/brwan_config_sede2.sh
+
+```
+
+## Orden de ejecución - Escenario 2: Switches brwan QoS Simple Switch [con QoS]
+Se indica el orden de ejecución de los scripts. Se parte del escenario anterior, aunque existe la opción de unicamente ejecutar este escenario haciendo uso de start sdwan qos.
+```bash
+cd $HOME/shared/rdsv-final
+$HOME/shared/rdsv-final/killer.sh
+$HOME/shared/rdsv-final/qos_brwan_config_sede1.sh
+$HOME/shared/rdsv-final/qos_brwan_config_sede2.sh
+$HOME/shared/rdsv-final/qos_sede1.sh
+$HOME/shared/rdsv-final/qos_sede2.sh
+
+```
+
 ## Posibles problemas de ejecución
 Que los enlaces ya estan creados, para ello es necesario elimiarlos mediante:
 ```bash

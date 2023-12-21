@@ -22,7 +22,7 @@ echo "CTRL chart: $ctrlsdedge1"
 echo "** Killing the process **"
 RYU_PID=`$KUBECTL -n $OSMNS exec -i $ctrlsdedge1 -- pgrep -f 'ryu-manager'`
 echo "Este es el PID: $RYU_PID"
-$KUBECTL -n $OSMNS exec -i $ctrlsdedge1 -- kill -9 $RYU_PID
+$KUBECTL -n $OSMNS exec -i $ctrlsdedge1 -- kill $RYU_PID
 
 
 
